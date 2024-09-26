@@ -1,4 +1,5 @@
 //Berikut function untuk header interaktif
+replaceName();
 function replaceName(){
     let name = prompt("Siapa namamu?");
     console.log(name);
