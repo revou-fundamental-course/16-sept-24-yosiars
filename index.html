@@ -4,9 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js\script.js"></script>
 </head>
-<body>
-    
+<body class="body">
+    <header class="main-header">
+        <div class="logo-icon"></div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#our-profile">My Profile</a>
+            <a href="#portfolio">My Portfolio</a>
+            <a href="#message-us">Message Us</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section id="home">
+            <header>
+                <h1>Hi <span id="user-name">User</span>, Welcome to my website</h1>
+            </header>
+
+            <article>
+                <p>Ini adalah project mini coding saya saat bergabung di RevoU</p>
+                <div class="photo-banner photo-1"></div>
+                <div class="photo-banner photo-2"></div>
+                <div class="photo-banner photo-3"></div>
+                <div class="photo-banner photo-4"></div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="our-profile">
+            <header>
+                <h1>My Profile</h1>
+                <p>Menggali kisah perjalanan saya melalui pengalaman dan inspirasi dari berbagai tempat.</p>
+            </header>
+        
+            <div class="profile-cards-container">
+                <div class="profile-card">
+                    <div class="profile-image profile-image-bogor"></div>
+                    <h4>Bogor - Titik Awal</h4>
+                    <p>"Di sini segalanya dimulai. Dari kota yang penuh dinamika, tumbuhlah hasrat dan tekad untuk terus maju dan berinovasi."</p>
+                </div>
+        
+                <div class="profile-card">
+                    <div class="profile-image profile-image-jakarta"></div>
+                    <h4>Jakarta - Masa Berkembang</h4>
+                    <p>"Jakarta adalah tempat di mana kreativitas dan inovasi bersatu. Di kota ini, passion untuk teknologi dan desain tumbuh pesat."</p>
+                </div>
+        
+                <div class="profile-card">
+                    <div class="profile-image profile-image-future"></div>
+                    <h4>Visi Masa Depan</h4>
+                    <p>"Dengan bekal pengalaman dan visi yang lebih kuat, saya terus melangkah menuju masa depan yang penuh tantangan dan peluang baru."</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="portfolio">
+            <header>
+                <h1>Portfolio</h1>
+                <p>Menampilkan karya-karya terbaik yang mencerminkan kreativitas dan dedikasi saya.</p>
+            </header>
+        
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <div class="portfolio-image image-1"></div>
+                    <h4>Proyek 1: Track It</h4>
+                    <p>Merupakan aplikasi mobile untuk menyimpan informasi pengeluaran dan pemasukan pengguna</p>
+                </div>
+        
+                <div class="portfolio-item">
+                    <div class="portfolio-image image-2"></div>
+                    <h4>Proyek 2: CodeGuide</h4>
+                    <p>Merupakan platform untuk belajar online berkualitas tinggi dengan pengajar berprofesional</p>
+                </div>
+        
+                <div class="portfolio-item">
+                    <div class="portfolio-image image-3"></div>
+                    <h4>Proyek 3: Streamz</h4>
+                    <p>Merupakan aplikasi desktop untuk menonton video secara online</p>
+                </div>
+        
+                <div class="portfolio-item">
+                    <div class="portfolio-image image-4"></div>
+                    <h4>Proyek 4: Fruitables</h4>
+                    <p>Merupakan platform marketplace online untuk buah dan sayur</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <hr>
+
+        <section id="message-us">
+            <header>
+                <h1>Message Us</h1>
+            </header>
+        
+            <div class="container">
+                <!-- Form Section -->
+                <div class="form-section">
+                    <form name="message-form" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="full-name">Nama:</label>
+                            <input id="full-name" placeholder="Nama" type="text" name="full-name" required />
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="birth-date">Tanggal Lahir:</label>
+                            <input id="birth-date" type="date" name="birth-date" required />
+                        </div>
+        
+                        <div class="form-group gender-group">
+                            <label>Jenis Kelamin:</label>
+                            <div class="radio-options">
+                                <input type="radio" id="male" name="gender" value="male" />
+                                <label for="male">Laki-laki</label>
+                        
+                                <input type="radio" id="female" name="gender" value="female" />
+                                <label for="female">Perempuan</label>
+                            </div>
+                        </div>                        
+        
+                        <div class="form-group">
+                            <label for="messages">Pesan:</label>
+                            <textarea id="messages" placeholder="Pesan" name="messages"></textarea>
+                        </div>
+        
+                        <div class="form-group">
+                            <button type="submit" class="btn-submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <!-- Output Section -->
+                <div class="output-section">
+                    <div class="output-item">
+                        <strong>Nama:</strong> <span id="sender-full-name"></span>
+                    </div>
+                    <div class="output-item">
+                        <strong>Tanggal Lahir:</strong> <span id="sender-birth-date"></span>
+                    </div>
+                    <div class="output-item">
+                        <strong>Jenis Kelamin:</strong> <span id="sender-gender"></span>
+                    </div>
+                    <div class="output-item">
+                        <strong>Pesan:</strong> <span id="sender-messages"></span>
+                    </div>
+                </div>
+            </div>
+        </section>                
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>Created By RevoU</p>
+    </footer>
 </body>
 </html>
